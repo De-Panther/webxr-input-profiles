@@ -1,0 +1,32 @@
+{
+  "name": "@webxr-input-profiles/motion-controllers",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/motion-controllers.cjs",
+  "module": "./dist/motion-controllers.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "types": "./src/index.d.ts",
+    "require": "./dist/motion-controllers.cjs",
+    "import": "./dist/motion-controllers.js"
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "dist/**",
+    "src/**"
+  ],
+  "scripts": {
+    "clean": "node -e \"try { require('fs').rmdirSync('./dist', { recursive: true }); } catch {}\"",
+    "build": "rollup -c",
+    "cleanBuild": "npm run clean && npm run build",
+    "watch": "rollup -c -w -m inline",
+    "test": "echo \"Run tests from root\" && exit 1",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@webxr-input-profiles/assets": "^1.0.0"
+  }
+}
